@@ -24,15 +24,4 @@ abstract class ModuleFactory {
       ),
     );
   }
-
-  Widget getPage(String path, BuildContext context) {
-    final page = _routers[path];
-    if (page != null) {
-      return MultiProvider(
-        providers: _bindings ?? [Provider(create: (_) => Object())],
-        child: Builder(builder: (context) => page(context)),
-      );
-    }
-    throw Exception('path of page is required');
-  }
 }
