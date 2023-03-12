@@ -10,7 +10,9 @@ class TestPage extends StatelessWidget {
     final name = context.read<TestController>().getText();
     return Scaffold(
       body: Center(
-        child: Text(name),
+        child: GestureDetector(
+            onTap: () => Navigator.of(context).pushNamed('/test'),
+            child: Text(name)),
       ),
     );
   }
